@@ -1,4 +1,4 @@
-# HackingLab-FS25
+# Insecure-File-Upload-Lab
 
 A simple hacking lab designed to teach students the critical importance of backend validation and to demonstrate that frontend checks alone are insufficient.  
 This lab is part of a coursework submission for the FS25 module "Hacking Lab" at the Eastern Switzerland University of Applied Sciences (OST).
