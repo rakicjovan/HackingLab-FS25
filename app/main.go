@@ -36,7 +36,11 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(w, "File uploaded! Access it at /uploads/%s", filename)
+	// Tell the browser we're sending HTML
+	w.Header().Set("Content-Type", "text/html")
+
+	// Output clickable link
+	fmt.Fprintf(w, "File uploaded! Access it at <a href=\"/uploads/%s\">/uploads/%s</a>", filename, filename)
 }
 
 func main() {

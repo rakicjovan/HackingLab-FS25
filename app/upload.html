@@ -2,13 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Insecure File Upload</title>
+  <title>Secure Image Upload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .notice {
+      padding: 1rem;
+      background-color: #e0f7fa;
+      border: 1px solid #00796b;
+      border-radius: 4px;
+      color: #004d40;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Upload a File</h1>
-  <form method="POST" action="/upload" enctype="multipart/form-data">
-    <input type="file" name="file" required />
+  <h1>Secure Image Upload</h1>
+  <div class="notice">
+    <strong>Note:</strong> Only PNG and JPEG image files are allowed. Files are strictly validated for security purposes.
+  </div>
+  <p>Select an image to upload. Once uploaded, you’ll get a link to access it.</p>
+  <form method="POST" action="/upload" enctype="multipart/form-data" id="uploadForm">
+    <input type="file" name="file" id="fileInput" accept=".png,.jpg,.jpeg,image/png,image/jpeg" required />
     <button type="submit">Upload</button>
   </form>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', function (e) {
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+
+      if (!file) {
+        alert("Please select a file.");
+        e.preventDefault();
+        return;
+      }
+
+      const allowedTypes = ['image/png', 'image/jpeg'];
+      if (!allowedTypes.includes(file.type)) {
+        alert("Only PNG and JPEG images are allowed.");
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
