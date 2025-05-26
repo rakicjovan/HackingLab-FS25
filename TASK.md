@@ -29,3 +29,8 @@ He used PHP on the backend, so you suspect you might be able to execute PHP code
 - Think about how PHP execution works in common web servers and how you might trigger it.
 
 Good luck — and happy hacking!  
+
+## Security Questions
+1. **Why are client-side validation checks alone insufficient for securing file uploads?** (Hint: Think about how an attacker interacts with a web application and what they have control over.)
+2. **Beyond file type, what other crucial security checks should a robust file upload mechanism implement on the server-side to prevent malicious uploads?** (Hint: Consider what an attacker might try to embed within a seemingly innocent file.)
+3. **If an attacker successfully uploads a malicious PHP script, what are some potential negative consequences for the web application and its server?** (Hint: Think about the level of access and control a malicious script might gain.)

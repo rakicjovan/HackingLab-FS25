@@ -86,6 +86,28 @@ You should now see the contents of `/flag.txt`.
 
 ---
 
+## Security Questions
+1. **Why are client-side validation checks alone insufficient for securing file uploads?**<br>
+Client-side checks run in the user's browser, which an attacker can easily bypass or modify. They can manipulate the request directly (e.g., using browser developer tools or proxies) to send malicious data regardless of frontend restrictions.
+
+2. **Beyond file type, what other crucial security checks should a robust file upload mechanism implement on the server-side to prevent malicious uploads?**<br>
+Server-side checks should include:
+
+- **Content validation:** verifying the actual file content (e.g., using getimagesize() for images) to ensure it's not a disguised script.
+- **Malware scanning:** checking for known malicious code.
+Renaming uploaded files: to prevent path traversal or execution issues.
+- **Limiting file size:** to prevent denial-of-service attacks.
+- **Storing files outside the web root:** to prevent direct execution if a script somehow bypasses other checks.
+
+3. **If an attacker successfully uploads a malicious PHP script, what are some potential negative consequences for the web application and its server?
+An attacker could:**
+
+- Execute arbitrary commands on the server.
+- Gain access to sensitive data (e.g., database credentials, user information).
+- Deface the website or install backdoors.
+- Use the server to launch further attacks (e.g., phishing, spam, DDoS).
+- Completely compromise the server, leading to data loss or system unavailability.
+
 ## Conclusion
 
 This challenge demonstrates how **frontend-only security is not real security**. Relying on client-side HTML attributes or JavaScript to enforce upload restrictions is easily bypassed.
