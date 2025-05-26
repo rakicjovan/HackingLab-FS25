@@ -15,7 +15,7 @@ He used PHP on the backend, so you suspect you might be able to execute PHP code
 
 ## Your Task
 
-- Start the service and visit using the given FQDN.
+- Start the service and visit it using the given FQDN.
 - Investigate how to bypass the image upload restrictions.
 - Try to upload a PHP script disguised as an image or bypass the file type checks.
 - Use your uploaded PHP script to access the secret `/flag` route and retrieve the flag.
@@ -26,7 +26,6 @@ He used PHP on the backend, so you suspect you might be able to execute PHP code
 - Use browser developer tools to modify the HTML or the form data before submitting your upload.
 - Try manipulating the file extension or content-type headers.
 - Remember that the backend might still execute PHP code if your upload bypasses validation.
-- Look for clues in the `/uploads/` directory where your files get saved.
 - Think about how PHP execution works in common web servers and how you might trigger it.
 
 Good luck — and happy hacking!  
