@@ -8,7 +8,7 @@ This lab is part of a coursework submission for the FS25 module "Hacking Lab" at
 ## Instructions
 
 1. Navigate to the root directory of the repository.  
-2. Run the following command to build and start the Docker containers:  
+2. Run the following command to build and start the Docker container:  
    ```bash
    docker-compose up --build
    ```
