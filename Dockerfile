@@ -24,8 +24,8 @@ RUN chmod -R 777 /var/www/html/uploads
 COPY supervisord.conf /etc/supervisord.conf
 
 # Copy the flag file
-COPY flag.txt /flag.txt
-RUN chmod 644 /flag.txt
+COPY flag /flag
+RUN chmod 644 /flag
 
 # Start everything
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
